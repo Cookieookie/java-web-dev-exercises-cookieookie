@@ -12,8 +12,13 @@ public class Alice {
         System.out.println("What term within this sentence do you want to find? ");
         String searchTerm = input.nextLine();
 
+        Integer index = firstSentence.indexOf(searchTerm);
+        Integer length = searchTerm.length();
+
         if (firstSentence.toLowerCase().contains(searchTerm)) {
-            System.out.println("Yes! that term is in the sentence!: " + searchTerm);
+            System.out.println("Yes! that term is in the sentence!: " + searchTerm + "first appears at index " + index + " and is " + length + " characters long.");
+            String modifiedSentence = firstSentence.replace(searchTerm, "");
+            System.out.println(modifiedSentence);
         } else {
             System.out.println("Sorry, that term is not in the sentence" + searchTerm);
         }
